@@ -1,0 +1,814 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sif organic green — Pulpa de Fruta 100% Natural Dosificada</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --naranja: #F07B21;
+    --naranja-claro: #FFB347;
+    --amarillo: #FFD93D;
+    --verde: #2E7D32;
+    --verde-claro: #4CAF50;
+    --crema: #FFF8F0;
+    --blanco: #ffffff;
+    --oscuro: #1A1A1A;
+    --gris: #5A5A5A;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: 'DM Sans', sans-serif; background: var(--crema); color: var(--oscuro); overflow-x: hidden; }
+
+  /* NAV */
+  nav {
+    position: fixed; top: 0; width: 100%; z-index: 1000;
+    background: rgba(255,248,240,0.95); backdrop-filter: blur(12px);
+    padding: 16px 60px; display: flex; justify-content: space-between; align-items: center;
+    border-bottom: 1px solid rgba(240,123,33,0.15); transition: all 0.3s;
+  }
+  nav.scrolled { padding: 10px 60px; box-shadow: 0 4px 30px rgba(0,0,0,0.08); }
+  .logo { font-family: 'Playfair Display', serif; font-size: 1.7rem; font-weight: 900; color: var(--naranja); letter-spacing: -1px; }
+  .logo span { color: var(--verde); }
+  .nav-links { display: flex; gap: 32px; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--oscuro); font-size: 0.9rem; font-weight: 500; transition: color 0.2s; }
+  .nav-links a:hover { color: var(--naranja); }
+  .btn-nav { background: var(--naranja); color: white; padding: 10px 24px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.85rem; transition: all 0.3s; box-shadow: 0 4px 15px rgba(240,123,33,0.3); }
+  .btn-nav:hover { background: var(--verde); transform: translateY(-2px); }
+
+  /* HERO — estilo Fast Fruit: fondo verde + ola naranja */
+  .hero {
+    min-height: 100vh;
+    background: #3aad3a;
+    display: flex; align-items: center; justify-content: center;
+    padding: 100px 60px 0;
+    position: relative; overflow: hidden;
+    flex-direction: column;
+  }
+  /* Hojas decorativas flotantes */
+  .hero-leaf {
+    position: absolute;
+    opacity: 0.7;
+    animation: leafFloat 6s ease-in-out infinite;
+    pointer-events: none;
+    font-size: 2.5rem;
+  }
+  .hl1 { top: 12%; left: 5%;  animation-duration: 5s;   animation-delay: 0s;   transform: rotate(-30deg); }
+  .hl2 { top: 25%; left: 12%; animation-duration: 7s;   animation-delay: 1s;   transform: rotate(20deg);  font-size: 1.8rem; }
+  .hl3 { top: 8%;  right: 8%; animation-duration: 6s;   animation-delay: 0.5s; transform: rotate(40deg);  }
+  .hl4 { top: 40%; right: 5%; animation-duration: 5.5s; animation-delay: 2s;   transform: rotate(-20deg); font-size: 2rem; }
+  .hl5 { top: 65%; left: 3%;  animation-duration: 6.5s; animation-delay: 1.5s; transform: rotate(15deg);  font-size: 1.6rem; }
+  .hl6 { top: 60%; right: 10%;animation-duration: 4.8s; animation-delay: 0.8s; transform: rotate(-45deg); font-size: 1.4rem; }
+  @keyframes leafFloat {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    33%     { transform: translateY(-20px) rotate(8deg); }
+    66%     { transform: translateY(-8px)  rotate(-5deg); }
+  }
+
+  /* Texto hero centrado */
+  .hero-content {
+    text-align: center;
+    position: relative; z-index: 5;
+    max-width: 900px;
+  }
+  .hero-badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(255,255,255,0.2); border: 1px solid rgba(255,255,255,0.4);
+    color: white; font-size: 0.82rem; font-weight: 600;
+    padding: 6px 18px; border-radius: 50px; margin-bottom: 24px; letter-spacing: 1px;
+    animation: fadeInUp 0.6s ease both;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(3rem, 7vw, 5.5rem);
+    line-height: 1.05; font-weight: 900;
+    color: white;
+    margin-bottom: 28px;
+    animation: fadeInUp 0.7s ease 0.1s both;
+    text-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  }
+  .hero h1 em { font-style: italic; color: var(--amarillo); }
+  .hero p {
+    font-size: 1.1rem; line-height: 1.7;
+    color: rgba(255,255,255,0.88);
+    margin: 0 auto 36px; max-width: 520px;
+    animation: fadeInUp 0.7s ease 0.2s both;
+  }
+  .hero-btns { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; animation: fadeInUp 0.7s ease 0.3s both; }
+  .btn-primary { background: var(--naranja); color: white; padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; box-shadow: 0 6px 25px rgba(240,123,33,0.45); }
+  .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 10px 35px rgba(240,123,33,0.55); background: #e06a10; }
+  .btn-secondary { background: white; color: var(--verde); padding: 14px 32px; border-radius: 50px; text-decoration: none; font-weight: 700; font-size: 1rem; transition: all 0.3s; box-shadow: 0 6px 20px rgba(0,0,0,0.12); }
+  .btn-secondary:hover { background: var(--amarillo); color: var(--verde); transform: translateY(-3px); }
+
+  /* Mango central debajo del texto */
+  .hero-fruit-center {
+    position: relative; z-index: 5;
+    margin-top: 40px;
+    display: flex; justify-content: center;
+  }
+  .hero-mango-img {
+    width: 320px; max-width: 40vw;
+    filter: drop-shadow(0 30px 50px rgba(0,0,0,0.3));
+    animation: mangoCaida 1.8s cubic-bezier(0.23, 1, 0.32, 1) 0.4s both;
+    transform-origin: 50% 10%;
+  }
+  @keyframes mangoCaida {
+    0%   { transform: translateY(-280px) rotate(-25deg) scale(0.7); opacity: 0; }
+    55%  { transform: translateY(14px)   rotate(3deg)  scale(1.04); opacity: 1; }
+    70%  { transform: translateY(-8px)   rotate(-1deg) scale(0.99); }
+    85%  { transform: translateY(4px)    rotate(1deg)  scale(1.01); }
+    100% { transform: translateY(0)      rotate(0deg)  scale(1);    opacity: 1; }
+  }
+
+  /* Ola naranja abajo */
+  .hero-wave {
+    width: 100%; line-height: 0;
+    position: relative; z-index: 4;
+    margin-top: -2px;
+  }
+  .hero-wave svg { display: block; width: 100%; }
+
+  /* Frutas pequeñas flotantes en el hero */
+  .hero-float-fruit {
+    position: absolute;
+    border-radius: 50%;
+    overflow: hidden;
+    animation: floatImg 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.22));
+    z-index: 3;
+  }
+  .hero-float-fruit img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; }
+  .hff1 { width: 70px; height: 70px; top: 20%; left: 6%;  animation-duration: 4.5s; animation-delay: 0s; border-radius: 0; overflow: visible; }
+  .hff2 { width: 55px; height: 55px; top: 55%; left: 10%; animation-duration: 5.2s; animation-delay: 1.2s; }
+  .hff3 { width: 65px; height: 65px; top: 18%; right: 7%; animation-duration: 4.8s; animation-delay: 0.6s; }
+  .hff4 { width: 58px; height: 58px; top: 52%; right: 5%; animation-duration: 5s;   animation-delay: 1.8s; }
+  .hff5 { width: 50px; height: 50px; top: 72%; left: 20%; animation-duration: 6s;   animation-delay: 0.3s; }
+  .hff6 { width: 52px; height: 52px; top: 70%; right: 18%;animation-duration: 5.5s; animation-delay: 2.1s; }
+  .hero-float-fruit img { width: 100%; height: 100%; object-fit: cover; }
+  @keyframes floatImg {
+    0%,100% { transform: translateY(0) rotate(0deg); }
+    50%      { transform: translateY(-18px) rotate(5deg); }
+  }
+
+  /* Frutas pequeñas no-circulares (con fondo transparente) */
+  .hff-leaf { border-radius: 0 !important; overflow: visible !important; background: transparent !important; }
+  .hff-leaf img { border-radius: 0 !important; object-fit: contain !important; }
+
+  /* MARQUEE */
+  .marquee-wrap { background: var(--verde); padding: 14px 0; overflow: hidden; white-space: nowrap; }
+  .marquee-inner { display: inline-flex; gap: 48px; animation: marquee 22s linear infinite; }
+  .marquee-item { color: rgba(255,255,255,0.9); font-size: 0.85rem; font-weight: 600; letter-spacing: 0.5px; }
+  .marquee-dot { color: var(--amarillo); }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+
+  /* STATS BAR */
+  .stats-bar { background: var(--naranja); padding: 28px 60px; display: flex; justify-content: space-around; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .stat-item { text-align: center; color: white; }
+  .stat-num { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; display: block; line-height: 1; }
+  .stat-label { font-size: 0.8rem; opacity: 0.85; font-weight: 500; margin-top: 4px; }
+  .stat-divider { width: 1px; height: 50px; background: rgba(255,255,255,0.3); }
+
+  /* SECTION BASE */
+  section { padding: 90px 60px; }
+  .section-tag { display: inline-block; background: rgba(240,123,33,0.1); color: var(--naranja); font-size: 0.75rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; padding: 6px 16px; border-radius: 50px; margin-bottom: 16px; }
+  .section-tag.green { background: rgba(46,125,50,0.1); color: var(--verde); }
+  h2.section-title { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 3.5vw, 2.8rem); font-weight: 900; line-height: 1.2; margin-bottom: 16px; }
+  h2.section-title em { font-style: italic; color: var(--naranja); }
+  .section-sub { font-size: 1rem; color: var(--gris); line-height: 1.7; max-width: 520px; }
+
+  /* PRODUCTOS */
+  .productos { background: white; }
+  .productos-header { text-align: center; margin-bottom: 60px; }
+  .productos-header .section-sub { margin: 0 auto; }
+  .productos-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; max-width: 1200px; margin: 0 auto; }
+  .producto-card { background: var(--crema); border-radius: 24px; overflow: hidden; transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1); cursor: pointer; border: 1px solid rgba(240,123,33,0.1); }
+  .producto-card:hover { transform: translateY(-8px) scale(1.01); box-shadow: 0 20px 60px rgba(240,123,33,0.2); border-color: rgba(240,123,33,0.3); }
+  .producto-img { height: 200px; display: flex; align-items: center; justify-content: center; position: relative; overflow: hidden; }
+  .producto-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
+  .producto-card:hover .producto-img img { transform: scale(1.08); }
+  .pi-mango     { background: linear-gradient(135deg, #FFF3CD, #FFD580); }
+  .pi-maracuya  { background: linear-gradient(135deg, #FFF9C4, #FFEE58); }
+  .pi-mora      { background: linear-gradient(135deg, #F3E5F5, #CE93D8); }
+  .pi-fresa     { background: linear-gradient(135deg, #FCE4EC, #F48FB1); }
+  .pi-lulo      { background: linear-gradient(135deg, #F1F8E9, #AED581); }
+  .pi-guanabana { background: linear-gradient(135deg, #E8F5E9, #81C784); }
+  .pi-mandarina { background: linear-gradient(135deg, #FFF3CD, #FFB347); }
+  .pi-piña      { background: linear-gradient(135deg, #FFFDE7, #FFF176); }
+  .pi-zapote    { background: linear-gradient(135deg, #FBE9E7, #FFAB91); }
+  .pi-tamarindo { background: linear-gradient(135deg, #EFEBE9, #BCAAA4); }
+  .pi-limon     { background: linear-gradient(135deg, #F9FBE7, #DCE775); }
+  .pi-nispero   { background: linear-gradient(135deg, #FFF8E1, #FFCC80); }
+  .producto-info { padding: 24px; }
+  .producto-info h3 { font-family: 'Playfair Display', serif; font-size: 1.25rem; margin-bottom: 8px; }
+  .producto-info p { font-size: 0.85rem; color: var(--gris); line-height: 1.6; margin-bottom: 16px; }
+  .producto-tags { display: flex; gap: 8px; flex-wrap: wrap; }
+  .ptag { font-size: 0.72rem; font-weight: 600; padding: 4px 12px; border-radius: 50px; background: rgba(240,123,33,0.1); color: var(--naranja); }
+  .ptag.g { background: rgba(46,125,50,0.1); color: var(--verde); }
+
+  /* DOSIFICADAS */
+  .dosificadas { background: linear-gradient(135deg, #1A1A1A 0%, #2D2D2D 100%); color: white; position: relative; overflow: hidden; }
+  .dosificadas::before { content: ''; position: absolute; top: -100px; right: -100px; width: 500px; height: 500px; background: radial-gradient(circle, rgba(240,123,33,0.15), transparent 70%); pointer-events: none; }
+  .dosi-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; max-width: 1100px; margin: 0 auto; align-items: center; }
+  .dosi-text .section-tag { background: rgba(255,183,71,0.2); color: var(--naranja-claro); }
+  .dosi-text h2 { color: white; }
+  .dosi-text h2 em { color: var(--naranja-claro); }
+  .dosi-text p { color: rgba(255,255,255,0.7); margin-bottom: 32px; }
+  .dosi-cards { display: flex; flex-direction: column; gap: 16px; }
+  .dosi-card { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 16px; padding: 22px 24px; display: flex; align-items: center; gap: 18px; transition: all 0.3s; }
+  .dosi-card:hover { background: rgba(240,123,33,0.15); border-color: rgba(240,123,33,0.4); transform: translateX(6px); }
+  .dosi-icon { width: 52px; height: 52px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; flex-shrink: 0; }
+  .dosi-icon.orange { background: rgba(240,123,33,0.2); }
+  .dosi-icon.green  { background: rgba(76,175,80,0.2); }
+  .dosi-icon.yellow { background: rgba(255,217,61,0.2); }
+  .dosi-card h4 { color: white; font-size: 0.95rem; font-weight: 600; margin-bottom: 4px; }
+  .dosi-card p { color: rgba(255,255,255,0.6); font-size: 0.82rem; margin: 0; }
+
+  /* POR QUÉ ELEGIRNOS */
+  .porque { background: var(--crema); }
+  .porque-inner { max-width: 1200px; margin: 0 auto; }
+  .porque-header { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 60px; }
+  .porque-img-wrap { position: relative; border-radius: 28px; overflow: hidden; height: 400px; }
+  .porque-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+  .porque-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .porque-item { background: white; border-radius: 20px; padding: 28px; border: 1px solid rgba(240,123,33,0.1); transition: all 0.3s; position: relative; overflow: hidden; }
+  .porque-item::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--naranja), var(--amarillo)); transform: scaleX(0); transform-origin: left; transition: transform 0.3s; }
+  .porque-item:hover::before { transform: scaleX(1); }
+  .porque-item:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(240,123,33,0.15); }
+  .pi-icon { font-size: 2rem; margin-bottom: 14px; display: block; }
+  .porque-item h3 { font-size: 1rem; font-weight: 700; margin-bottom: 8px; }
+  .porque-item p { font-size: 0.85rem; color: var(--gris); line-height: 1.6; }
+
+  /* PROCESO */
+  .proceso { background: white; }
+  .proceso-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+  .proceso-inner .section-sub { margin: 0 auto 60px; }
+  .steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; }
+  .step { position: relative; text-align: center; }
+  .step-num { width: 60px; height: 60px; border-radius: 50%; background: var(--naranja); color: white; font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 900; display: flex; align-items: center; justify-content: center; margin: 0 auto 16px; box-shadow: 0 8px 25px rgba(240,123,33,0.35); transition: transform 0.3s; }
+  .step:hover .step-num { transform: scale(1.1); }
+  .step h4 { font-size: 0.95rem; font-weight: 700; margin-bottom: 8px; }
+  .step p { font-size: 0.82rem; color: var(--gris); line-height: 1.6; }
+  .step-arrow { position: absolute; top: 30px; right: -12px; color: var(--naranja); font-size: 1.2rem; z-index: 1; }
+  .step:last-child .step-arrow { display: none; }
+
+  /* CONTACTO */
+  .contacto { background: linear-gradient(135deg, #F1F8E9 0%, #E8F5E9 50%, #FFF3E0 100%); position: relative; overflow: hidden; }
+  .contacto::before { content: ''; position: absolute; bottom: -80px; right: -80px; width: 400px; height: 400px; background: radial-gradient(circle, rgba(240,123,33,0.12), transparent); }
+  .contacto-inner { max-width: 1100px; margin: 0 auto; }
+  .contacto-grid { display: grid; grid-template-columns: 1fr 1.2fr; gap: 80px; align-items: start; }
+  .contacto-info h2 { font-family: 'Playfair Display', serif; font-size: 2.2rem; font-weight: 900; margin-bottom: 16px; line-height: 1.2; }
+  .contacto-info h2 em { color: var(--naranja); font-style: italic; }
+  .contacto-info p { color: var(--gris); line-height: 1.7; margin-bottom: 36px; }
+  .contact-methods { display: flex; flex-direction: column; gap: 16px; }
+  .contact-method { display: flex; align-items: center; gap: 16px; background: white; border-radius: 16px; padding: 16px 20px; text-decoration: none; color: var(--oscuro); border: 1px solid rgba(240,123,33,0.1); transition: all 0.3s; }
+  .contact-method:hover { border-color: var(--naranja); transform: translateX(6px); box-shadow: 0 8px 25px rgba(240,123,33,0.15); }
+  .cm-icon { width: 44px; height: 44px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .cm-wa    { background: #E8F5E9; }
+  .cm-tel   { background: rgba(240,123,33,0.1); }
+  .cm-mail  { background: #FFF3E0; }
+  .cm-insta { background: #FCE4EC; }
+  .cm-info h4 { font-size: 0.85rem; font-weight: 700; margin-bottom: 2px; }
+  .cm-info p  { font-size: 0.8rem; color: var(--gris); margin: 0; }
+
+  /* FORMULARIO */
+  .form-card { background: white; border-radius: 28px; padding: 44px; box-shadow: 0 20px 60px rgba(0,0,0,0.08); border: 1px solid rgba(240,123,33,0.1); }
+  .form-card h3 { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 28px; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 0; }
+  .form-group { margin-bottom: 16px; }
+  .form-group label { display: block; font-size: 0.8rem; font-weight: 600; margin-bottom: 8px; }
+  .form-group input, .form-group textarea, .form-group select { width: 100%; padding: 12px 16px; border: 1.5px solid rgba(0,0,0,0.1); border-radius: 12px; font-family: 'DM Sans', sans-serif; font-size: 0.9rem; background: var(--crema); transition: all 0.2s; outline: none; color: var(--oscuro); }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus { border-color: var(--naranja); box-shadow: 0 0 0 3px rgba(240,123,33,0.1); background: white; }
+  .form-group textarea { resize: vertical; min-height: 100px; }
+  .btn-submit { width: 100%; padding: 16px; background: var(--naranja); color: white; border: none; border-radius: 14px; font-family: 'DM Sans', sans-serif; font-size: 1rem; font-weight: 700; cursor: pointer; transition: all 0.3s; box-shadow: 0 6px 25px rgba(240,123,33,0.35); margin-top: 8px; }
+  .btn-submit:hover { background: #e06a10; transform: translateY(-2px); box-shadow: 0 10px 35px rgba(240,123,33,0.45); }
+
+  /* FOOTER */
+  footer { background: #1A1A1A; color: white; padding: 40px 60px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+  .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 900; color: var(--naranja); }
+  .footer-logo span { color: white; }
+  footer p { color: rgba(255,255,255,0.5); font-size: 0.82rem; }
+  .footer-social { display: flex; gap: 12px; }
+  .social-btn { width: 36px; height: 36px; border-radius: 50%; background: rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: center; text-decoration: none; color: white; font-size: 0.9rem; transition: all 0.3s; }
+  .social-btn:hover { background: var(--naranja); transform: translateY(-2px); }
+
+  /* SCROLL REVEAL */
+  .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-left { opacity: 0; transform: translateX(-40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal-left.visible { opacity: 1; transform: translateX(0); }
+  .reveal-right { opacity: 0; transform: translateX(40px); transition: opacity 0.7s ease, transform 0.7s ease; }
+  .reveal-right.visible { opacity: 1; transform: translateX(0); }
+
+  @keyframes fadeInUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+
+  @media (max-width: 900px) {
+    nav { padding: 14px 24px; } .nav-links { display: none; }
+    section { padding: 60px 24px; } .hero { padding: 80px 24px 0; }
+    .hero-float-fruit { display: none; }
+    .hero-leaf { font-size: 1.6rem; }
+    .hero-mango-img { width: 220px; }
+    .dosi-grid, .porque-header, .contacto-grid { grid-template-columns: 1fr; gap: 40px; }
+    .steps { grid-template-columns: 1fr 1fr; }
+    .stats-bar { padding: 24px; } .stat-divider { display: none; }
+    .porque-grid { grid-template-columns: 1fr 1fr; }
+    footer { flex-direction: column; text-align: center; padding: 30px 24px; }
+    .form-row { grid-template-columns: 1fr; }
+
+    .contacto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 80px 20px;
+}
+
+.contacto-inner {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.contacto-grid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.contacto-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.contact-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 30px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.contact-method {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  text-align: left;
+}
+  }
+</style>
+</head>
+<body>
+
+  <!-- NAV -->
+<nav id="navbar">
+
+  <style>
+    #navbar{
+      width:100%;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      padding:18px 7%;
+      background:#fff;
+      position:fixed;
+      top:0;
+      left:0;
+      z-index:1000;
+      box-shadow:0 2px 10px rgba(0,0,0,0.05);
+    }
+
+    .logo{
+      display:flex;
+      align-items:center;
+      gap:12px;
+      font-size:1.5rem;
+      font-weight:700;
+      color:#111;
+    }
+
+    .logo img{
+      width:65px;   /* tamaño del logo */
+      height:65px;  /* tamaño del logo */
+      object-fit:contain;
+    }
+
+    .logo span{
+      color:#58b947;
+    }
+
+    .nav-links{
+      display:flex;
+      gap:30px;
+      list-style:none;
+    }
+
+    .nav-links a{
+      text-decoration:none;
+      color:#222;
+      font-weight:500;
+      transition:.3s;
+    }
+
+    .nav-links a:hover{
+      color:#58b947;
+    }
+
+    .btn-nav{
+      background:#58b947;
+      color:#fff;
+      padding:12px 24px;
+      border-radius:40px;
+      text-decoration:none;
+      font-weight:600;
+      transition:.3s;
+    }
+
+    .btn-nav:hover{
+      transform:translateY(-2px);
+      background:#469737;
+    }
+  </style>
+
+  <div class="logo">
+
+    <img src="LOGO-BRITCHAM-600.png">
+
+    Sif<span>organic</span>
+  </div>
+
+  <ul class="nav-links">
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#dosificadas">Dosificadas</a></li>
+    <li><a href="#porque">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+
+  <a href="#contacto" class="btn-nav">Cotizar ahora</a>
+
+</nav>
+
+<!--  
+<nav id="navbar">
+  <div class="logo">Sif<span>organic</span></div>
+  <ul class="nav-links">
+    <li><a href="#productos">Productos</a></li>
+    <li><a href="#dosificadas">Dosificadas</a></li>
+    <li><a href="#porque">Nosotros</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="#contacto" class="btn-nav">Cotizar ahora</a>
+</nav>  -->
+
+<!-- HERO — Estilo Fast Fruit -->
+<section class="hero" id="inicio">
+
+  <!-- Hojas decorativas -->
+  <span class="hero-leaf hl1">🍃</span>
+  <span class="hero-leaf hl2">🌿</span>
+  <span class="hero-leaf hl3">🍃</span>
+  <span class="hero-leaf hl4">🌿</span>
+  <span class="hero-leaf hl5">🍃</span>
+  <span class="hero-leaf hl6">🌿</span>
+
+  <div class="hero-content">
+    <div class="hero-badge">🌿 100% Natural · Sin conservantes</div>
+    <h1> Pulpa<br>de<em> fruta.</em></h1>
+    <p>Pulpas de fruta 100% naturales, congeladas y dosificadas, Nosotros la convertimos en una
+solución práctica y deliciosa para tu negocio. Del campo colombiano directamente a tu negocio.</p>
+    <div class="hero-btns">
+      <a href="#productos" class="btn-primary">Ver productos →</a>
+      <a href="#contacto" class="btn-secondary">Contáctanos</a>
+    </div>
+  </div> 
+
+  <!-- Ola naranja -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 120" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+      <path d="M0,60 C240,120 480,0 720,60 C960,120 1200,0 1440,60 L1440,120 L0,120 Z" fill="#F07B21"/>
+    </svg>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Fresa <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mandarina <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mora <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Zapote <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mango <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Piña <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Maracuyá <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Lulo <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Guanábana <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Tamarindo <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Limón <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Níspero <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Fresa <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mandarina <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mora <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Zapote <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Mango <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Piña <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Maracuyá <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Lulo <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Guanábana <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Tamarindo <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Limón <span class="marquee-dot">✦</span></span>
+    <span class="marquee-item">Níspero <span class="marquee-dot">✦</span></span>
+  </div>
+</div>
+
+<!-- STATS -->
+<div class="stats-bar">
+  <div class="stat-item"><span class="stat-num">+25</span><div class="stat-label">Variedades de fruta</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-num">100%</span><div class="stat-label">Natural · Sin conservantes</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-num">inmediato</span><div class="stat-label">Tiempo de entrega</div></div>
+  <div class="stat-divider"></div>
+  <div class="stat-item"><span class="stat-num">365</span><div class="stat-label">Días disponibles al año</div></div>
+</div>
+
+<!-- PRODUCTOS -->
+<section class="productos" id="productos">
+  <div class="productos-header reveal">
+    <div class="section-tag">Nuestros productos sif</div>
+    <h2 class="section-title">Las pulpas más <em>solicitadas</em></h2>
+    <p class="section-sub">Frutas seleccionadas, procesadas con tecnología de punta para conservar su sabor, color y nutrientes naturales.</p>
+  </div>
+  <div class="productos-grid">
+
+    <!-- FRESA -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-fresa">
+        <img src="https://saludteu.com/wp-content/uploads/2017/01/Beneficios-de-las-fresas.jpg" alt="Fresa">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Fresa</h3>
+        <p>Frescura y dulzura en cada porción.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g"></span><span class="ptag">Dosificada</span></div>
+      </div>
+    </div>
+
+    <!-- MANDARINA -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-mandarina">
+        <img src="https://th.bing.com/th/id/R.a78dcf26cc99dd46deb1f512078fffda?rik=%2fVeXOmAqeYmfhw&riu=http%3a%2f%2f2.bp.blogspot.com%2f-wytwLcnbCM4%2fUKe6JtmKZcI%2fAAAAAAAAAHw%2fdGrYvNQC8PE%2fs1600%2fmandarina.jpg&ehk=Xo0PdNhXcHTjiyZwgmBYexabHu6tCcMV24pXQaWevwE%3d&risl=&pid=ImgRaw&r=0" alt="Mandarina">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Mandarina</h3>
+        <p>Cítrica, dulce y aromática. Perfecta para jugos naturales, y aderezos tropicales.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">Natural</span><span class="ptag">100% Fruta</span></div>
+      </div>
+    </div>
+
+    <!-- MORA -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-mora">
+        <img src="https://meatshop.gt/image/cache/catalog/Productos/Mercado/frutas-y-verduras-a-domicilio-en-guatemala-mora-1200x1200.jpg" alt="Mora">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Mora</h3>
+        <p>Mora de castilla 100% colombiana. Color intenso y sabor profundo para toda clase de preparaciones.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag">Pasteurizada</span><span class="ptag g">Natural</span></div>
+      </div>
+    </div>
+
+    <!-- ZAPOTE -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-zapote">
+        <img src="https://th.bing.com/th/id/R.3e15324af9d8a293ff858a69264d52cc?rik=8vvjSsXK09crsA&pid=ImgRaw&r=0" alt="Zapote">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Zapote</h3>
+        <p>Fruta tropical de sabor dulce y cremoso. Ideal para batidos, helados artesanales y postres.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">100% Natural</span></div>
+      </div>
+    </div>
+
+    <!-- MANGO -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-mango">
+        <img src="https://www.greenlife.co.ke/wp-content/uploads/2022/04/Mangoes.jpg" alt="Mango">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Mango</h3>
+        <p>Mango tommy seleccionado, con todo el sabor tropical. Ideal para jugos, smoothies y postres.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g"></span><span class="ptag">Dosificada</span></div>
+      </div>
+    </div>
+
+    <!-- PIÑA -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-piña">
+        <img src="https://tse2.mm.bing.net/th/id/OIP.umjvmzfrcAMIL9LTB-1ItQHaIa?r=0&cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Piña">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Piña</h3>
+        <p>Piña golden seleccionada, dulce y jugosa. Excelente para bebidas tropicales y marinados.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">Sin azúcar</span><span class="ptag">Natural</span></div>
+      </div>
+    </div>
+
+    <!-- MARACUYÁ -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-maracuya">
+        <img src="https://storyteller.travel/wp-content/uploads/2020/02/maracuya-facts.jpg" alt="Maracuyá">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Maracuyá</h3>
+        <p>Sabor ácido y aromático inconfundible. Perfecta para cócteles, salsas y refrescos tropicales.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">Listo para licuar</span></div>
+      </div>
+    </div>
+
+    <!-- LULO -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-lulo">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.z9fe2HD8tQoWKx09Q3UOgwHaE8?r=0&cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Lulo">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Lulo</h3>
+        <p>Fruta exótica colombiana de sabor único. Muy apreciada para jugos y preparaciones artesanales.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">100% Natural</span></div>
+      </div>
+    </div>
+
+    <!-- GUANÁBANA -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-guanabana">
+        <img src="https://th.bing.com/th/id/R.9c4ffe97fe6d5895f4a938782ad9b0d1?rik=l8RP0G3LyAfe%2bg&riu=http%3a%2f%2fbenefrut.com.mx%2fsite%2fwp-content%2fuploads%2f2013%2f11%2fguana-frente.jpg&ehk=kmLxWbHyey0iAlrhNG4Gg6Hc6aP0UweszCSfIOJNEqo%3d&risl=&pid=ImgRaw&r=0" alt="Guanábana">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Guanábana</h3>
+        <p>Pulpa cremosa y aromática de guanábana madura. Perfecta para jugos naturales y helados artesanales.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">Con/ sin azúcar</span></div>
+      </div>
+    </div>
+
+    <!-- TAMARINDO -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-tamarindo">
+        <img src="https://bolcereales.com.ar/wp-content/uploads/2020/11/tamarindo-tropical.jpg" alt="Tamarindo">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Tamarindo</h3>
+        <p>Agridulce e inconfundible. Imprescindible para refrescos, y recetas caribeñas.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">Natural</span><span class="ptag">Exótico</span></div>
+      </div>
+    </div>
+
+    <!-- LIMÓN -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-limon">
+        <img src="https://tse4.mm.bing.net/th/id/OIP.kh8jOhDR1LLlan-iDO9oJAHaEo?r=0&cb=thfc1falcon&rs=1&pid=ImgDetMain&o=7&rm=3" alt="Limón">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Limón</h3>
+        <p>Ácida y refrescante. Esencial en cócteles, aderezos, ceviches y bebidas gaseosas artesanales.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">Sin azúcar</span><span class="ptag">Natural</span></div>
+      </div>
+    </div>
+
+    <!-- NÍSPERO -->
+    <div class="producto-card reveal">
+      <div class="producto-img pi-nispero">
+        <img src="https://cdn.britannica.com/65/219365-050-BBF68075/Loquat-Seeds-Fruit-Leaves.jpg" alt="Níspero">
+      </div>
+      <div class="producto-info">
+        <h3>Pulpa de Níspero</h3>
+        <p>Dulce y aromático, con notas de pera y durazno. Muy apreciado para jugos y preparaciones gourmet.</p>
+        <div class="producto-tags"><span class="ptag">Congelada</span><span class="ptag g">100% Natural</span></div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- DOSIFICADAS -->
+<section class="dosificadas" id="dosificadas">
+  <div class="dosi-grid">
+    <div class="dosi-text reveal-left">
+      <div class="section-tag">Nuestra especialidad</div>
+      <h2 class="section-title">Pulpas <em>dosificadas</em> para tu operación</h2>
+      <p>Diseñadas para facilitar tu trabajo. Cada porción viene lista para usar, sin desperdicio y con la medida exacta que necesitas para cada preparación.</p>
+      <a href="#contacto" class="btn-primary">Solicitar información →</a>
+    </div>
+      <div class="dosi-card">
+        <div class="dosi-icon green">🧊</div>
+        <div><h4>Congeladas listas para usar</h4><p>Solo descongela y usa. Sin proceso adicional, sin merma, sin contaminación cruzada.</p></div>
+      </div>
+      <div class="dosi-card">
+        <div class="dosi-icon yellow">⚖️</div>
+        <div><h4>Gramaje exacto garantizado</h4><p>Estandariza tus recetas y controla tus costos con precisión en cada servicio.</p></div>
+      </div>
+      <div class="dosi-card">
+        <div class="dosi-icon orange">🏭</div>
+        <div><h4>Bidones industriales 220kg</h4><p>Para producciones a gran escala. Ideal para industria de alimentos y grandes volúmenes.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- POR QUÉ ELEGIRNOS -->
+<section class="porque" id="porque">
+  <div class="porque-inner">
+    <div class="porque-header">
+      <div class="reveal-left">
+        <div class="section-tag green">¿Por qué elegirnos?</div>
+        <h2 class="section-title">La <em>diferencia</em> está en cada detalle</h2>
+        <p class="section-sub">No solo vendemos pulpa. Somos una empresa de economía circular. Con los residuos naturales de nuestra producción de pulpa elaboramos fertilizantes orgánicos 100% colombianos. ♻️</p>
+      </div>
+
+       <div class="porque-img-wrap reveal-right">
+        <img src="https://assets.zyrosite.com/cdn-cgi/image/format=auto,w=375,h=471,fit=crop/Y4L6RMJar1UQDaZW/_mg_6044-3-removebg-dWxMBogejrcelP7R.png"
+             onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/Frutas.jpg/640px-Frutas.jpg'"
+             alt="Frutas variadas">
+      </div>
+      <a href="https://siforganicfertilizers.com/" class="contact-method">
+            <div class="cm-icon cm-insta">🌱</div>
+            <div class="cm-info"><h4>siforganicfertilizers.com</h4>👇<p></p></div>
+          </a>
+    </div>
+    <div class="porque-grid">
+      <div class="porque-item reveal"><span class="pi-icon">🚚</span><h3>Entregas Confiables</h3><p>Cumplimos con los tiempos acordados siempre. Tu operación no puede parar por falta de producto.</p></div>
+      <div class="porque-item reveal"><span class="pi-icon">🌱</span><h3>Fruta 100% Natural</h3><p>Sin conservantes, sin colorantes artificiales. Solo fruta seleccionada en su punto óptimo de madurez.</p></div>
+      <div class="porque-item reveal"><span class="pi-icon">🧪</span><h3>Fertilizantes </h3><p>Gestion de residuos, Los residuos se aprovechan eficientemente, nada se desperdicia.</p></div>
+      <div class="porque-item reveal"><span class="pi-icon">🗓️</span><h3>Disponibilidad Todo el Año</h3><p>Garantizamos stock permanente de todas las variedades sin importar la temporada.</p></div>
+      <div class="porque-item reveal"><span class="pi-icon">🤝</span><h3>Atención Personalizada</h3><p>Un equipo dedicado a entender tus necesidades y ofrecerte soluciones a la medida de tu negocio.</p></div>
+      <div class="porque-item reveal"><span class="pi-icon">✅</span><h3>Calidad Certificada</h3><p>Procesos de producción que cumplen normas de inocuidad alimentaria para tu total tranquilidad.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACTO -->
+<section class="contacto" id="contacto">
+  <div class="contacto-inner">
+    <div class="contacto-grid">
+      <div class="contacto-info reveal-left">
+        <div class="section-tag green">Contáctanos</div>
+        <h2>Hablemos de tu <em>negocio</em></h2>
+        <p>Estamos listos para ser tu aliado en pulpa de fruta. Cuéntanos qué necesitas y te respondemos de inmediato.</p>
+        <div class="contact-methods">
+          <a href="https://wa.me/573008847226" class="contact-method">
+            <div class="cm-icon cm-wa">💬</div>
+            <div class="cm-info"><h4>WhatsApp</h4><p>Chatea con nosotros ahora mismo</p></div>
+          </a>
+          <a href="tel:+573008847226" class="contact-method">
+            <div class="cm-icon cm-tel">📞</div>
+            <div class="cm-info"><h4>Teléfono</h4><p>+57 300 884 7226</p></div>
+          </a>
+          <a href="https://www.instagram.com/sif.frut?igsh=d3Ywb3diYjZlNW9p" class="contact-method">
+            <div class="cm-icon cm-insta">📸</div>
+            <div class="cm-info"><h4>Instagram</h4><p>@Sif.frut</p></div>
+          </a>
+        </div>
+      </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div>
+    <div class="footer-logo">Sif<span>organic</span></div>
+    <p style="margin-top:6px">Pulpa de fruta 100% natural para tu negocio</p>
+  </div>
+  <p>© 2026 FrutaPulpa · Colombia · Todos los derechos reservados</p>
+  <div class="footer-social">
+    <a href="#" class="social-btn">📘</a>
+    <a href="#" class="social-btn">📸</a>
+    <a href="#" class="social-btn">💬</a>
+  </div>
+</footer>
+
+<script>
+  window.addEventListener('scroll', () => {
+    document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+  });
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const delay = entry.target.dataset.delay || 0;
+        setTimeout(() => entry.target.classList.add('visible'), delay);
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.reveal, .reveal-left, .reveal-right').forEach((el, i) => {
+    el.dataset.delay = (i % 4) * 90;
+    observer.observe(el);
+  });
+
+  function handleSubmit(btn) {
+    btn.textContent = '✓ ¡Enviado! Te contactamos pronto';
+    btn.style.background = '#2E7D32';
+    btn.disabled = true;
+  }
+</script>
+</body>
+</html>
